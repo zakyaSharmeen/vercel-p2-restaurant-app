@@ -46,7 +46,10 @@ function Reservation() {
     const handleReservation = async(e)=>{
         e.preventDefault()
         try{
-            await axios.post("http://localhost:8000/api/v1/reservation/send",
+            // await axios.post("http://localhost:8000/api/v1/reservation/send",
+            
+            await axios.post("https://vercel-p2-restaurant-app.vercel.app/api/v1/reservation/send",
+
                 {firstName, lastName, email, phone, date, time},
                 {
                     headers:{
