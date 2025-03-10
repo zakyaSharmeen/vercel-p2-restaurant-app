@@ -5,16 +5,19 @@ const { errorMiddleware } = require("./error/error")
 const reservationRouter = require("./router/reserveRoute")
 
 PORT = 8000
-FRONTEND_URL = "http://localhost:3000"
 
 
 
 const app = express()
-app.use(cors(
-    {origin: [FRONTEND_URL],
-        methods: ["POST"],
-        credentials: true,}
-))
+// app.use(cors())
+const corsOptions = {
+    origin: "http://localhost:3000",
+    credentials: true, 
+    methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+    allowedHeaders: "Content-Type,Authorization",
+};
+
+app.use(cors(corsOptions));
 app.use(express.json())
 
 
