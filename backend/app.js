@@ -21,6 +21,9 @@ app.use(express.json())
 dbConnection()
 app.use(errorMiddleware)
 app.use("/api/v1/reservation",reservationRouter)
+app.get("/", (req, res)=>{
+    res.send("hii i m all set")
+})
 
 
 app.listen(PORT, ()=> console.log("server started at port 8000")
