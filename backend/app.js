@@ -24,7 +24,9 @@ const app = express()
 //   );
 app.use(
     cors({
-      origin: "https://vercel-p2-restaurant-app.vercel.app", 
+    //   origin: "https://vercel-p2-restaurant-app.vercel.app", 
+    origin: "https://vercel-p2-restaurant-app-ui.vercel.app/", 
+
       credentials: true,
     })
   );
